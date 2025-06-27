@@ -11,6 +11,7 @@ exports.handler = async function (event) {
         let command = new PutJobSuccessResultCommand({ jobId: event["CodePipeline.job"].id });
         
         let response = await client.send(command);
+        console.log(":::DONE!:::");
         console.log(":::RESPONSE:::" + JSON.stringify(response));
     } catch(err) {
         console.log(":::ERROR:::" + err);
